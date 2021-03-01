@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   continueButton: {
     [theme.breakpoints.down('sm')]: {
       width: '100%',
+      backgroundColor: 'rebeccapurple',
+      color: '#fff',
     },
   },
 }));
@@ -95,7 +97,7 @@ export default function RoomNameScreen({ name, roomName, setName, setRoomName, h
           <Button
             variant="contained"
             type="submit"
-            color="primary"
+            color="secondary"
             disabled={!name || !roomName}
             className={classes.continueButton}
           >
