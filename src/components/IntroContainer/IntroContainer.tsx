@@ -3,6 +3,8 @@ import { makeStyles, Theme, Typography } from '@material-ui/core';
 import Swoosh from './swoosh';
 import VideoLogo from './VideoLogo';
 import TwilioLogo from './TwilioLogo';
+import Logo from './img/logo.png';
+import Fondo from './img/fondo.png';
 import { useAppState } from '../../state';
 import UserMenu from './UserMenu/UserMenu';
 import { useLocation } from 'react-router-dom';
@@ -12,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: 'rgb(40, 42, 43)',
+    backgroundImage: `url(${Fondo})`,
     height: '100%',
   },
   container: {
@@ -41,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: 'rebeccapurple',
+    background: '#000',
     backgroundSize: 'cover',
     width: '296px',
     [theme.breakpoints.down('sm')]: {
@@ -112,10 +114,11 @@ const IntroContainer = (props: IntroContainerProps) => {
         <div className={classes.innerContainer}>
           <div className={classes.swooshContainer}>
             <div className={classes.logoContainer}>
-              <VideoLogo />
-              <Typography variant="h6" className={classes.title}>
+              {/* <VideoLogo /> */}
+              <img src={Logo} alt="" style={{ width: '230px' }} />
+              {/* <Typography variant="h6" className={classes.title}>
                 OzoneUniverse Video
-              </Typography>
+              </Typography> */}
             </div>
           </div>
           <div className={classes.content}>{props.children}</div>
